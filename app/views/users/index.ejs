@@ -1,0 +1,26 @@
+
+   <div class="page-header">
+     <h1>Very Important People<small> List</small></h1>
+   </div>
+ <div class="row">
+   <div class="span10">
+     <h2>Photo List</h2>
+
+     <ul class="media-grid">
+     <% users.forEach(function (user) { %>
+       <li>
+        <% var photo_url = user.gravatar_url() || "http://placehold.it/150x200" %>
+        <%- link_to('<img class="thumbnail" src=' + photo_url + ' alt="">', path_to.user(user), {remote: true, jsonp: 'Application.renderUserDetails'}) %>
+       <p class="name"><%= user.name + " " + user.surname  %></p>
+       </li>
+    <% }); %>
+    </ul>
+
+   </div>
+   <div class="span4">
+     <h3>Description</h3>
+     <p id="description-text">
+       Click on photo of choosen person to see who it is :)
+     </p>
+   </div>
+ </div>

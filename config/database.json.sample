@@ -1,0 +1,21 @@
+{ "development":
+  { "driver":   "mongoose"
+  , "host":     "localhost"
+  , "database": "usersapp-dev"
+  }
+, "test":
+  { "driver":   "mongoose"
+  , "host":     "localhost"
+  , "database": "usersapp-test"
+  }
+, "staging":
+  { "driver":   "mongoose"
+  , "host":     "localhost"
+  , "database": "usersapp-staging"
+  }
+, "production":
+  { "driver":   "mongoose"
+  , "host":     "localhost"
+  , "database": "usersapp-production"
+  }
+}

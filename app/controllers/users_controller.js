@@ -1,5 +1,7 @@
 load('application');
 
+before(loginRequired, {only: ['new', 'create', 'destroy']});
+
 action('index', function () {
   this.title = "VIP's list";
   User.find(function (err, users) {
@@ -47,15 +49,25 @@ action('show', function(){
 action('destroy', function () {
     User.findById(params.id, function(err, user){
       if(err || !user){
-        send({});
+        redirect("/");
       }else{
         user.remove(function(error){
           if(error){
-            send({});
+            redirect("/");
           }else{
-            send({});
+            redirect("/");
           }
         });
       }
     });
 });
+
+
+
+function loginRequired () {
+  if(request.session["logged_in"] == true){
+    next();
+  }else{
+    redirect("/login");
+  }
+}

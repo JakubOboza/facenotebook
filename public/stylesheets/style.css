@@ -56,3 +56,9 @@ li .name{
     -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
 }
+
+li .remove-link{
+  position: absolute;
+  top: 15px;
+  left: -90px;
+}

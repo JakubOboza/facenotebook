@@ -12,6 +12,9 @@
         <% var photo_url = user.gravatar_url() || "http://placehold.it/150x200" %>
         <%- link_to('<img class="thumbnail" src=' + photo_url + ' alt="">', path_to.user(user), {remote: true, jsonp: 'Application.renderUserDetails'}) %>
        <p class="name"><%= user.name + " " + user.surname  %></p>
+       <% if(request.session["logged_in"] == true){%>
+         <%- link_to("Remove", path_to.user(user), {method: "delete", class: "remove-link"}) %>
+       <% } %>
        </li>
     <% }); %>
     </ul>

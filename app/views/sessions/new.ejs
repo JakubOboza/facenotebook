@@ -1,0 +1,16 @@
+<div class="page-header">
+  <h1>Login</h1>
+</div>
+
+<% form_for(login, {action: path_to.sessions, method: 'POST', id: "login_form"}, function (form) { %>
+<div class="clearfix">
+  <%- form.label("password") %>
+  <div class="input">
+    <%- form.input("password", {type: "password"}) %>
+  </div>
+</div>
+  <div class="actions">
+    <%- form.submit('Login', {class: 'btn primary'}) %> or
+    <%- link_to('Cancel', path_to.users, {class: 'btn'}) %>
+  </div>
+<% });%>

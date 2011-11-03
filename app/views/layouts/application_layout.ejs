@@ -15,6 +15,10 @@
 
     <footer>
       <p>&copy; Jakub Oboza 2011</p>
+      <% if( request.session["logged_in"] == true ) {%>
+        <p><%- link_to("Logout", path_to.session({id: "logout"}), {method: "delete"}) %></p>
+      <% }%>
+        <p><%- link_to("New Person", path_to.new_user) %></p>
     </footer>
 
     </div>
